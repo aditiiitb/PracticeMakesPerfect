@@ -4,3 +4,6 @@ c:\users\adig\documents\visual studio 2013\Projects\QuickSort\QuickSort\bin\Debu
 c:\users\adig\documents\visual studio 2013\Projects\QuickSort\QuickSort\obj\Debug\QuickSort.csprojResolveAssemblyReference.cache
 c:\users\adig\documents\visual studio 2013\Projects\QuickSort\QuickSort\obj\Debug\QuickSort.exe
 c:\users\adig\documents\visual studio 2013\Projects\QuickSort\QuickSort\obj\Debug\QuickSort.pdb
+C:\Users\adig\MyGitHub\PracticeMakesPerfect\QuickSort\QuickSort\bin\Debug\QuickSort.exe.config
+C:\Users\adig\MyGitHub\PracticeMakesPerfect\QuickSort\QuickSort\obj\Debug\QuickSort.exe
+C:\Users\adig\MyGitHub\PracticeMakesPerfect\QuickSort\QuickSort\obj\Debug\QuickSort.pdb
