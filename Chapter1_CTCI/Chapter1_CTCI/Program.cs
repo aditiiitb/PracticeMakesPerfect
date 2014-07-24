@@ -21,20 +21,22 @@ namespace Chapter1_CTCI
             int n = s.Length;
             for (int i = 0; i < n/2; i++)
             {
-                s = Swap(s.ToCharArray(), i, n - 1);
+                s = Swap(s, i, n - 1 - i);
             }
             return s;
         }
 
-        public static string Swap(char[] s, int i, int j)
+        public static string Swap(string st, int i, int j)
         {
-            if (i < s.Length && i > 0 && j < s.Length && j > 0)
+            StringBuilder sb = new StringBuilder(st);
+            if (i < st.Length && i >= 0 && j < st.Length && j >= 0)
             {
-                char a = s[i];
-                s[i] = s[j];
-                s[j] = a;
+                char a = sb[i];
+                sb[i] = sb[j];
+                sb[j] = a;
+                
             }
-            return s.ToString();
+            return sb.ToString();
         }
     }
 }
