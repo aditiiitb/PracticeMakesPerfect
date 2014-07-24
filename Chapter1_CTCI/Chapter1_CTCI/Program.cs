@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Chapter1_CTCI.Algos;
 
 namespace Chapter1_CTCI
 {
@@ -11,32 +12,12 @@ namespace Chapter1_CTCI
     {
         public static void Main(string[] args)
         {
-            string s = "abcde";
+            string s = "aabbcccdee";
             Debug.WriteLine(s);
-            Debug.WriteLine(Reverse(s));
+            //StringAlgos.Reverse(ref s);
+            StringAlgos.RemoveDupes(ref s);
+            Debug.WriteLine(s);
         }
 
-        public static string Reverse(string s)
-        {
-            int n = s.Length;
-            for (int i = 0; i < n/2; i++)
-            {
-                s = Swap(s, i, n - 1 - i);
-            }
-            return s;
-        }
-
-        public static string Swap(string st, int i, int j)
-        {
-            StringBuilder sb = new StringBuilder(st);
-            if (i < st.Length && i >= 0 && j < st.Length && j >= 0)
-            {
-                char a = sb[i];
-                sb[i] = sb[j];
-                sb[j] = a;
-                
-            }
-            return sb.ToString();
-        }
     }
 }
