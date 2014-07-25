@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+
+public class OrderedPermutation implements Procedure{
+
+	public ArrayList<ArrayList<Integer>> Process(ArrayList<Integer> numbers)
+	{
+		
+	}
+
+	public ArrayList<String> Process(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

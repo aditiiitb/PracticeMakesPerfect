@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+
+public class OrderedPermutation implements Procedure{
+
+	public ArrayList<ArrayList<Integer>> Process(ArrayList<Integer> numbers)
+	{
+		
+	}
+}

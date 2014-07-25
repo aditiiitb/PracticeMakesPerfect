@@ -1,0 +1,5 @@
+
+public interface Procedure {
+	public ArrayList<Integer> Process;
+	
+}

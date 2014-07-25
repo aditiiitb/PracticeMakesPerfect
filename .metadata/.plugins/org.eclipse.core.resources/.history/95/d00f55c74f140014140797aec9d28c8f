@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+
+public interface Procedure<> {
+	public ArrayList<Integer> Process(ArrayList<Integer> numbers);
+	
+	public ArrayList<String> 
+}

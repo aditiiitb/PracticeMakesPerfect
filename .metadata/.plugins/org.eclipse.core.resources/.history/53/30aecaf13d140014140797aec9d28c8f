@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+
+public class Program
+{
+	public static void main(String[] args)
+	{
+		System.out.println("sdsdsad");
+		ArrayList<Integer> mylist = new ArrayList<Integer>();		
+		
+		Algos.GenerateAllPermutations(mylist);
+	}
+}
+
+// permutations
+// subsets i.e. combinations
+

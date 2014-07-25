@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+
+public interface Procedure {
+	public ArrayList<ArrayList<Integer>> GetPerms(ArrayList<Integer> numbers);
+	
+	public ArrayList<String> GetPerms(String word); 
+}

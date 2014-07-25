@@ -1,0 +1,16 @@
+import java.util.List;
+
+public class Program
+{
+	public static void main(String[] args)
+	{
+		System.out.println("sdsdsad");
+		List<int> numbers = new List<int>();
+		
+		List<List<int>> perms = Algos.GenerateAllPermutations(numbers);
+	}
+}
+
+// permutations
+// subsets i.e. combinations
+
