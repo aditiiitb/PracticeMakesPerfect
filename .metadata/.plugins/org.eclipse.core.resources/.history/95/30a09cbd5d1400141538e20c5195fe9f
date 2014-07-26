@@ -13,10 +13,12 @@ public class SimplePermutation implements Procedure {
 		{
 			for(int i = 0; i < numbers.size() ; i++)
 			{
-				ArrayList<ArrayList<Integer>> restOfListPerms = Process(Utils.RemoveI(numbers, i));			
+				int x = numbers.get(i);
+				ArrayList<Integer> listWithoutI = Utils.RemoveI(numbers, i);
+				ArrayList<ArrayList<Integer>> restOfListPerms = Process(listWithoutI);			
 				for(int j = 0 ; j < restOfListPerms.size(); j++)
 				{
-					restOfListPerms.get(j).add(0,numbers.get(i));
+					restOfListPerms.get(j).add(0,x);
 					result.add(restOfListPerms.get(j)); 
 				}				
 			}

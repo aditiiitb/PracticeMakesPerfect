@@ -9,11 +9,9 @@ public class Program
 		ArrayList<Integer> mylist = new ArrayList<Integer>();		
 		mylist.add(1);
 		mylist.add(2);
-		mylist.add(3);
-		mylist.add(4);
 		System.out.println(mylist);		
 		
-		Procedure myprocedures = new SimplePermutation();
+		Procedure myprocedures = new Combinations();
 		Collections.sort(mylist);
 		System.out.println(myprocedures.Process(mylist));
 	}

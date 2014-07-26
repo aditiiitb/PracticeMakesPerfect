@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+
+public class Combinations implements Procedure {
+	public ArrayList<ArrayList<Integer>> Process(ArrayList<Integer> numbers)
+	{
+		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>(); 
+		// pick all subsets from the list
+		// some are of length 1, 2, ... Length.
+		// subset of length 2 are first letter + all subsets of length 1, and so over whole array.
+		// 
+		if (numbers.size() <=1)
+			result.add(numbers);
+		else
+		{
+			for(int i = 0 ; i< numbers.size();i++)
+			{
+				//result.add(GetAllSubsetsOfLength(numbers,i));
+			}
+		}
+		return result;
+	}
+
+	public ArrayList<ArrayList<Integer>> GetAllSubsetsOfLength(ArrayList<Integer> numbers, int l)
+	{
+		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>(); 
+		
+		return result;
+	}
+	public ArrayList<String> Process(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

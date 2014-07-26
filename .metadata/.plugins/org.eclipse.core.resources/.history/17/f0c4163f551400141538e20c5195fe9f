@@ -8,12 +8,11 @@ public class Program
 		System.out.println("sdsdsad");
 		ArrayList<Integer> mylist = new ArrayList<Integer>();		
 		mylist.add(1);
-		mylist.add(2);
 		mylist.add(3);
-		mylist.add(4);
+		mylist.add(2);
 		System.out.println(mylist);		
 		
-		Procedure myprocedures = new SimplePermutation();
+		Procedure myprocedures = new Simplepermutation();
 		Collections.sort(mylist);
 		System.out.println(myprocedures.Process(mylist));
 	}
