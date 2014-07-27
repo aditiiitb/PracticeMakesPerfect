@@ -8,8 +8,10 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="150"/>
-
+    <Grid Background="White">
+        <StackPanel Orientation="Vertical" >
+            <TextBox HorizontalAlignment="Center"  TextWrapping="Wrap" Text="Quiz App"  VerticalAlignment="Center"/>
+            <Button Background="Red" Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="150" Click="Button_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
