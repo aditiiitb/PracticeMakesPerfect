@@ -104,6 +104,124 @@ public class Tree {
 			}
 			
 	}
+	public boolean HasLeafPath(Node root, int Sum)
+	{
+		if (root == null)
+		{
+			return (Sum == 0);			
+		}
+		else
+		{
+			if (root.Value == Sum)
+				return true;
+			else if (root.Value > Sum)
+				return false;
+			else
+			{
+				return HasLeafPath(root.Left, Sum - root.Value) || HasLeafPath(root.Right, Sum - root.Value);
+			}
+		}			
+	}
+	public void PrintPaths(String prefix, Node root)
+	{
+		if (root == null)
+			System.out.println(prefix);		
+		else if (root.Left == null && root.Right == null)
+		{
+			System.out.println(prefix + " " + root.Value.toString());
+		}			
+		else
+		{		
+			PrintPaths(prefix+ " " +root.Value.toString(),root.Left);
+			PrintPaths(prefix+ " "+root.Value.toString(), root.Right);
+		}
+	}
+	public void Mirror(Node root)
+	{
+		if (root != null)
+		{
+			// exchange left and right subtrees
+			Node saveleft = root.Left;
+			root.Left = root.Right;
+			root.Right = saveleft;
+			Mirror(root.Left);
+			Mirror(root.Right);
+		}
+	}
+	public void Duplicate(Node root)
+	{
+		if (root != null)
+		{
+			Node saveleft = root.Left;
+			Node dupnode = new Node();
+			dupnode.Value = root.Value;
+			dupnode.Left = saveleft;
+			root.Left = dupnode;
+			Duplicate(saveleft);
+			Duplicate(root.Right);
+		}
+	}
+	public boolean IsSame(Node rootA, Node rootB)
+	{
+		if ((rootA == null && rootB != null) || (rootA != null && rootB == null))
+			return false;
+		else if (rootA== null && rootB== null)
+			return true;
+		else {
+			if (rootA.Value == rootB.Value)
+				return IsSame(rootA.Left, rootB.Left) && IsSame(rootA.Right, rootB.Right);
+			else
+				return false;
+		}
+	}
+	public int CountTrees(int N)
+	{
+		if (N <= 1)
+			return 1;
+		else if (N%2 == 0) // N is even
+		{
+			int Sum = 0;
+			for (int i = N-1 ; i >= N/2; i--)
+			{
+				Sum = Sum + 2*CountTrees(i); 
+			}
+			return Sum;
+		}
+		else // N is odd
+		{
+			int Sum = 0;
+			for (int i = N-1; i >= (N+1)/2; i--)
+			{
+				Sum = Sum + 2*CountTrees(i); 
+			}
+			return Sum + CountTrees((N-1)/2);
+		}
+	}
+	
+	public int countTrees(int numKeys)
+	{
+		 if (numKeys <=1) { 
+			    return(1); 
+			  } 
+			  else { 
+			    // there will be one value at the root, with whatever remains 
+			    // on the left and right each forming their own subtrees. 
+			    // Iterate through all the values that could be the root... 
+			    int sum = 0; 
+			    int left, right, root;
+
+			    for (root=1; root<=numKeys; root++) { 
+			      left = countTrees(root - 1); 
+			      right = countTrees(numKeys - root);
+
+			      // number of possible trees with this root == left*right 
+			      sum += left*right; 
+			    }
+
+			    return(sum); 
+			  }
+	}
+		
 	
 	private void InsertHelper(Node x, Node root)
 	{
