@@ -5,7 +5,7 @@ public class Program {
 	public static void main(String args[])
 	{
 		System.out.println("Dzsdd");
-		Integer[] arr = {2,3,4,5,6};
+		Integer[] arr = {3,4,5,6,2};
 		Tree z = new Tree(arr);
 		z.PrintPretty();
 		
@@ -27,8 +27,9 @@ public class Program {
 		//Tree A = new Tree(arr2);
 		//A.PrintPretty();
 		//System.out.println(z.IsSame(z.Head, A.Head));
-		System.out.println( " \n\n" + z.CountTrees(z.Size(z.Head)));
 		System.out.println( " \n\n" + z.countTrees(z.Size(z.Head)));
+		
+		System.out.println(" \n\n" +z.IsBST(z.Head, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
 	}	
 }

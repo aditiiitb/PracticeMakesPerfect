@@ -174,30 +174,6 @@ public class Tree {
 				return false;
 		}
 	}
-	public int CountTrees(int N)
-	{
-		if (N <= 1)
-			return 1;
-		else if (N%2 == 0) // N is even
-		{
-			int Sum = 0;
-			for (int i = N-1 ; i >= N/2; i--)
-			{
-				Sum = Sum + 2*CountTrees(i); 
-			}
-			return Sum;
-		}
-		else // N is odd
-		{
-			int Sum = 0;
-			for (int i = N-1; i >= (N+1)/2; i--)
-			{
-				Sum = Sum + 2*CountTrees(i); 
-			}
-			return Sum + CountTrees((N-1)/2);
-		}
-	}
-	
 	public int countTrees(int numKeys)
 	{
 		 if (numKeys <=1) { 
@@ -220,6 +196,15 @@ public class Tree {
 
 			    return(sum); 
 			  }
+	}
+	public boolean IsBST(Node root, int small, int large)
+	{
+		if (root == null)
+			return true;
+		else 
+		{
+			return (root.Value <= large && root.Value >= small && IsBST(root.Left, small, root.Value) && IsBST(root.Right, root.Value, large));
+		}
 	}
 		
 	
