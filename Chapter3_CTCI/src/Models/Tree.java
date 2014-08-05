@@ -42,23 +42,92 @@ public class Tree {
 		q.add(SpecialNode);
 		while (!q.isEmpty())
 		{
-			System.out.println(); // print for next line			
+			System.out.println(); // print for next line
+			boolean morelines = false;
 			while (q.peek() != SpecialNode)
 			{
+				
 				Node s = q.remove();
 				if (s.Left != null)
+				{
+					morelines = true;
 					q.add(s.Left);
+				}
 				if (s.Right != null)
+				{	
+					morelines = true;
 					q.add(s.Right);
+				}
 				System.out.print(s.Value + " ");
 			}
-			q.add(SpecialNode);// add the special char to end of queue		
+			if (morelines)
+			{	
+				q.add(SpecialNode);// add the special char to end of queue				
+			}
 			q.remove();// remove the special node from head of queue				
 		}
 	}
+	public void Insert(Node x)
+	{
+		if (Head == null)
+		{
+			Head = x;
+			return;
+		}
+		else
+			InsertHelper(x, Head);
+	}
+	public int Size(Node root)
+	{
+		if (root==null)
+			return 0;
+		else
+			return 1+ Size(root.Left) + Size(root.Right);
+	}
+	public int maxDepth(Node root)
+	{
+		if (root==null)
+			return 0;
+		else
+			return 1+ Math.max(maxDepth(root.Left), maxDepth(root.Right)); 
+	}
+	public int MinValue(Node root)
+	{
+		if (root == null)
+			return 1000;
+		else 
+			{
+				if (root.Left == null)
+					return root.Value;
+				else
+					return MinValue(root.Left);
+			}
+			
+	}
 	
-	
-	
+	private void InsertHelper(Node x, Node root)
+	{
+		if (root == null)
+			return;
+		if (root.Value >= x.Value)
+		{
+			if (root.Left == null)
+			{
+				root.Left = x;				
+			}
+			else
+				InsertHelper(x, root.Left);
+		}
+		else
+		{
+			if (root.Right == null)
+			{
+				root.Right =x;
+			}
+			else
+				InsertHelper(x, root.Right);
+		}
+	}
 	private boolean DFSHelper(Node head, int val)
 	{
 		if (head==null)
