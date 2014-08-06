@@ -15,8 +15,49 @@ public class Program {
 		System.out.println(subsets);
 		*/
 		
-		System.out.println(AllPerms("abcde"));
-		
+		//System.out.println(AllPerms("abcde").size());
+		Set<Integer> numbers = new HashSet<Integer>(Arrays.asList(1,2,3,4));
+		System.out.println(PickXOutOfN(numbers, 2));
+	}
+	
+	private static List<Set<Integer>> PickXOutOfN(Set<Integer> numbers, int x)
+	{
+		if (numbers.size() < x)
+			return null;
+		if (numbers.size() == x)
+			return new ArrayList<Set<Integer>>(Arrays.asList(numbers));
+		else
+		{
+			Iterator<Integer> iter = numbers.iterator();
+			if (!iter.hasNext())
+				return null;
+			
+			Integer num = (Integer) iter.next();
+			Set<Integer> copynums = new HashSet<Integer>();
+			copynums.addAll(numbers);
+			
+			copynums.remove(num);
+			List<Set<Integer>> result = new ArrayList<Set<Integer>>();				
+			
+			List<Set<Integer>> otherSets = PickXOutOfN(copynums, x - 1);
+			if (otherSets != null)
+			{
+				for(Set<Integer> otherSet : otherSets)
+				{
+					Set<Integer> copy = new HashSet<Integer>();
+					copy.addAll(otherSet);
+					copy.add(num);
+					result.add(copy);
+				}			
+			}
+			List<Set<Integer>> otherCompleteSets = PickXOutOfN(copynums, x);
+			if (otherCompleteSets != null)
+			{
+				result.addAll(otherCompleteSets);
+			}
+			
+			return result;
+		}
 	}
 	
 	private static List<String> AllPerms(String word)
