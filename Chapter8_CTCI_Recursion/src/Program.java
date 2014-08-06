@@ -1,11 +1,11 @@
 
 import java.util.*;
 
-
 public class Program {
 	public static void main(String[] args)
 	{
 		System.out.println("paths");
+		/*
 		System.out.println(PossiblePaths(2,4));
 		Set<Integer> mySet = new HashSet<Integer>();
 		mySet.add(1);
@@ -13,6 +13,34 @@ public class Program {
 		mySet.add(3);
 		List<Set<Integer>> subsets = GetAllSubsets(mySet);
 		System.out.println(subsets);
+		*/
+		
+		System.out.println(AllPerms("abcde"));
+		
+	}
+	
+	private static List<String> AllPerms(String word)
+	{
+		List<String> result = new ArrayList<String>();
+		if (word.length() == 0)
+			return null;
+		else if (word.length() == 1)
+		{
+			return new ArrayList<String>(Arrays.asList(word));
+		}
+		else
+		{
+			for(int i = 0 ; i <= word.length() -1; i++)
+			{
+				String restOfString = word.substring(0,i) + word.substring(i+1); 
+				List<String> otherCharPerms = AllPerms(restOfString);
+				for(String perm : otherCharPerms)
+				{
+					result.add(word.charAt(i) + perm);
+				}
+			}
+		}
+		return result;
 	}
 	
 	
