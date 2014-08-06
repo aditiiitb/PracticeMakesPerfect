@@ -16,10 +16,81 @@ public class Program {
 		*/
 		
 		//System.out.println(AllPerms("abcde").size());
-		Set<Integer> numbers = new HashSet<Integer>(Arrays.asList(1,2,3,4));
-		System.out.println(PickXOutOfN(numbers, 2));
+		//Set<Integer> numbers = new HashSet<Integer>(Arrays.asList(1,2,3,4));
+		//System.out.println(PickXOutOfN(numbers, 2));
+		int[] dimensions = {1,2,3};
+		System.out.println(MakeNum(5,dimensions));
+		 System.out.println(makeChange(5, 3));
+
 	}
 	
+	private static Set<ArrayList<Integer>> MakeNum(int num, int[] dimensions)
+	{
+		Set<ArrayList<Integer>> result = new HashSet<ArrayList<Integer>>();
+		for (int d :dimensions)
+		{
+			if (d == num)
+			{
+				result.add(new ArrayList<Integer>(Arrays.asList(d)));
+			}
+			else if (d < num)
+			{
+				for (int i = 0 ; i <= num/d; i++)
+				{
+					int[] otherDims = RemoveDim(dimensions,d); 
+					Set<ArrayList<Integer>> resultD = MakeNum(num - i*d, otherDims);
+					if (resultD.size() > 0)
+					{
+						for (ArrayList<Integer> numMinusD : resultD)
+						{
+							for (int k = 0; k <i ; k++)
+							{
+								numMinusD.add(d);
+							}
+							result.add(numMinusD);
+						}
+					}
+				}
+			}			
+		}
+				
+		return result;		
+	}
+	
+	
+	public static int makeChange(int n, int denom) {
+		int next_denom = 0;
+		switch (denom) {
+		 case 3:
+		 next_denom = 2;
+		 break;
+		 case 2:
+		 next_denom = 1;
+		 break;		 
+		 case 1:
+		 return 1;
+		 }
+		 int ways = 0;
+		 for (int i = 0; i * denom <= n; i++) {
+		 ways += makeChange(n - i * denom, next_denom);
+		 }
+		 return ways;
+		 }
+		
+		private static int[] RemoveDim(int[] dims, int d)
+	{
+		int[] copy = new int[dims.length - 1];
+		int index = 0;
+		for (int k = 0; k < dims.length ; k++)
+		{
+			if (dims[k] != d)
+			{
+				copy[index] = dims[k];
+				index++;
+			}
+		}
+		return copy;
+	}
 	private static List<Set<Integer>> PickXOutOfN(Set<Integer> numbers, int x)
 	{
 		if (numbers.size() < x)
