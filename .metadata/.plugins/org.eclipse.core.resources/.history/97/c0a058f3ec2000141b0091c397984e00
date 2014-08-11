@@ -1,0 +1,17 @@
+
+public class Program {
+	public static void main(String[] args)
+	{
+		System.out.println("szdsf");
+		int[] values = {10,20,30,40};
+		int[] weights = {1, 2,1, 3};
+		int W = 3;
+		System.out.println(CalculateBestKnapSackValue(values, weights, W));
+		
+	}
+	
+	private static int CalculateBestKnapSackValue()
+	{
+		
+	}
+}
