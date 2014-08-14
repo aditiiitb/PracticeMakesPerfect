@@ -1,0 +1,10 @@
+import java.util.HashMap;
+
+
+public class LinkedListFuncs {
+
+	public static void RemoveDupes(Node head)
+	{
+		HashMap<int,int> Values = new HashMap<int, int>();
+	}
+}

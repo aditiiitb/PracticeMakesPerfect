@@ -1,0 +1,20 @@
+
+public class TreeFuncs {
+
+	public static boolean IsBalanced(TreeNode head)
+	{
+		if (head == null)
+			return true;
+		else
+			return (Math.abs(Length(head.Left) - Length(head.Right)) <= 1);
+				
+	}
+	
+	private static int Length(TreeNode head)
+	{
+		if(head== null)
+			return 0;
+		else
+			return 1+ Math.max(Length(head.Left), Length(head.Right));
+	}
+}

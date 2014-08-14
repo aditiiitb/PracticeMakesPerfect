@@ -1,0 +1,8 @@
+
+public class LinkedListFuncs {
+
+	public void RemoveDupes(Node head)
+	{
+		
+	}
+}

@@ -1,0 +1,18 @@
+
+public class Program {
+	public static void main(String args[])
+	{
+		System.out.println("helllooo");
+		
+		Node head = CreateList();
+	}
+	
+	private static Node CreateList()
+	{
+		Node head = new Node();
+		head.Value = 10;
+		head.Next = new Node();
+		
+		return head;
+	}
+}
