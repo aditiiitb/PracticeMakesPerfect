@@ -6,8 +6,11 @@ public class Program {
 		int[] weights = {10,20,30};
 		int[] volumes = {1,2,1};
 		int MaxVolume = 2; 
+		int[] heights = {2,3,2,4};
 		//System.out.println(KnapSack(weights, volumes, weights.length, MaxVolume));
-		System.out.println(KnapSackDP(weights, volumes, weights.length, MaxVolume));
+		//System.out.println(KnapSackDP(weights, volumes, weights.length, MaxVolume));
+		Area done = Histogram(heights, heights.length);
+		System.out.println(done.startX + " " + done.endX + " " + done.height + " " + done.getArea());
 	}
 	
 	private static int KnapSack(int[] weights, int[] volumes, int numItems, int MaxV)
@@ -52,5 +55,39 @@ public class Program {
 		}
 		
 		return knapsackvals[numItems][MaxV];
+	}
+	
+	private static Area Histogram(int[] heights, int numItems)
+	{
+		if (numItems == 0)
+			return new Area(0,0,0);
+		else
+		{
+			Area nminus1 = Histogram(heights, numItems - 1);
+			if (nminus1.endX == numItems - 1)
+			{
+				Area withN = new Area(0,0,0);
+				withN.startX = nminus1.startX;
+				withN.endX = nminus1.endX + 1;
+				if (nminus1.height == 0)
+					withN.height = heights[numItems -1];
+				else
+				{
+					withN.height = Math.min(nminus1.height, heights[numItems -1]);
+				}
+				if (withN.getArea() > nminus1.getArea())
+					return withN;
+				else return nminus1;
+			}
+			else
+			{
+				// compare nminus1 with only n
+				Area onlyN = new Area(numItems - 1, numItems, heights[numItems - 1]);
+				if (onlyN.getArea() > nminus1.getArea())
+					return onlyN;
+				else
+					return nminus1;
+			}
+		}
 	}
 }

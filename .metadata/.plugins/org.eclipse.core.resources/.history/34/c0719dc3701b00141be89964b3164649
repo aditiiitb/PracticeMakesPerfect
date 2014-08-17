@@ -1,8 +1,0 @@
-
-public class TreeFuncs {
-
-	public static boolean IsBalanced(TreeNode head)
-	{
-		
-	}
-}

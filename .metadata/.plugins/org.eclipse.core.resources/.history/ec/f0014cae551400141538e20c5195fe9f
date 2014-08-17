@@ -1,9 +1,0 @@
-import java.util.ArrayList;
-
-
-public class Combinations {
-	public ArrayList<ArrayList<Integer>> Process(ArrayList<Integer> numbers)
-	{
-		return result;
-	}
-}

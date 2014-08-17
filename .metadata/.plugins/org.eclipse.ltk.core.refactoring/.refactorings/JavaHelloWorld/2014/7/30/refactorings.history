@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;Algos&apos; to &apos;SimplePermutation&apos;&#x0A;- Original project: &apos;JavaHelloWorld&apos;&#x0A;- Original element: &apos;Algos&apos;&#x0A;- Renamed element: &apos;SimplePermutation&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Algos&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Algos.java[Algos" matchStrategy="1" name="SimplePermutation" qualified="false" references="true" similarDeclarations="false" stamp="1406329689582" textual="false" version="1.0"/>
-</session>

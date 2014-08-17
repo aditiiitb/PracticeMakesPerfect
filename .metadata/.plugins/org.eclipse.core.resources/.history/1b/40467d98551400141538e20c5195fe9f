@@ -1,7 +1,0 @@
-
-public class Combinations {
-	public ArrayList<ArrayList<Integer>> Process(ArrayList<Integer> numbers)
-	{
-		
-	}
-}
