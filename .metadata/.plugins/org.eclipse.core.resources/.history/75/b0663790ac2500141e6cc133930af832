@@ -1,0 +1,56 @@
+
+public class Program {
+	public static void main(String[] args)
+	{
+		System.out.println("sdfsd");
+		int[] weights = {10,20,30};
+		int[] volumes = {1,2,1};
+		int MaxVolume = 2; 
+		//System.out.println(KnapSack(weights, volumes, weights.length, MaxVolume));
+		System.out.println(KnapSackDP(weights, volumes, weights.length - 1, MaxVolume));
+	}
+	
+	private static int KnapSack(int[] weights, int[] volumes, int numItems, int MaxV)
+	{
+		if (numItems == 0 || MaxV == 0)
+			return 0;
+		else
+		{
+			if (volumes[numItems - 1] > MaxV)
+				return KnapSack(weights, volumes, numItems -1, MaxV);
+			else 
+			{
+				int nminus1 = KnapSack(weights, volumes, numItems - 1, MaxV - volumes[numItems - 1]);
+				int nminus1only = KnapSack(weights, volumes, numItems - 1, MaxV);
+				return Math.max(nminus1 + weights[numItems - 1], nminus1only);
+			}
+		}
+	}
+	
+	private static int KnapSackDP(int[] weights, int[] volumes, int numItems, int MaxV)
+	{
+		int[][] knapsackvals = new int[numItems+1][MaxV+1];
+		
+		for (int w = 0 ; w <= numItems; w++)
+		{
+			for (int v = 0; v <= MaxV; v++)
+			{
+				if ( v == 0 || w == 0 )
+				{
+					knapsackvals[w][v] = 0;
+				}
+				else
+				{
+					if (volumes[v-1] <= v)
+					{
+						knapsackvals[w][v] = Math.max(weights[w-1] + knapsackvals[w-1][v-volumes[v-1]],knapsackvals[w-1][v]);
+					}
+					else
+						knapsackvals[w][v] = knapsackvals[w-1][v];
+				}
+			}
+		}
+		
+		return knapsackvals[numItems][MaxV];
+	}
+}

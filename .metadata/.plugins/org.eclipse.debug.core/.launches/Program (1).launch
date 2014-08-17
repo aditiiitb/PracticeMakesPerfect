@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<<<<<<< Updated upstream
-<listEntry value="/DynamicProgramming_2/src/Program.java"/>
-=======
-<listEntry value="/DataStruct/src/Program.java"/>
->>>>>>> Stashed changes
+<listEntry value="/KnapSack/src/Program.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="Program"/>
-<<<<<<< Updated upstream
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="DynamicProgramming_2"/>
-=======
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="DataStruct"/>
->>>>>>> Stashed changes
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="KnapSack"/>
 </launchConfiguration>
