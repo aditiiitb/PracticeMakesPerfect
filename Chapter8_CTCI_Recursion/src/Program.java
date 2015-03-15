@@ -1,26 +1,26 @@
-
 import java.util.*;
 
 public class Program {
 	public static void main(String[] args)
 	{
-		System.out.println("paths");
-		/*
-		System.out.println(PossiblePaths(2,4));
+		//System.out.println("paths");
+	
+		//System.out.println(PossiblePaths(2,4));
 		Set<Integer> mySet = new HashSet<Integer>();
 		mySet.add(1);
 		mySet.add(2);
 		mySet.add(3);
-		List<Set<Integer>> subsets = GetAllSubsets(mySet);
+		List<Set<Integer>> subsets = GetAllSets(mySet);
 		System.out.println(subsets);
-		*/
+		
 		
 		//System.out.println(AllPerms("abcde").size());
 		//Set<Integer> numbers = new HashSet<Integer>(Arrays.asList(1,2,3,4));
 		//System.out.println(PickXOutOfN(numbers, 2));
-		int[] dimensions = {1,2,3};
-		System.out.println(MakeNum(5,dimensions));
-		 System.out.println(makeChange(5, 3));
+		
+		//int[] dimensions = {1,2,3};
+		//System.out.println(MakeNum(5,dimensions));
+		//System.out.println(makeChange(5, 3));
 
 	}
 	
@@ -156,7 +156,7 @@ public class Program {
 	}
 	
 	
-	private static List<Set<Integer>> GetAllSubsets(Set<Integer> myset)
+	private static List<Set<Integer>> GetAllSets(Set<Integer> myset)
 	{
 		List<Set<Integer>> subsets = new ArrayList<Set<Integer>>();
 		if (myset.size() == 0)
@@ -171,7 +171,7 @@ public class Program {
 			subsets.add(new HashSet<Integer>(Arrays.asList(x)));
 			myset.remove(x);
 			
-			List<Set<Integer>> otherSubsets = GetAllSubsets(myset);
+			List<Set<Integer>> otherSubsets = GetAllSets(myset);
 			if (otherSubsets != null)
 			{					
 				for (Set<Integer> otherSet : otherSubsets)
